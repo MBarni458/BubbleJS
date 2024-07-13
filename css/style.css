@@ -1,0 +1,13 @@
+.bubble{
+  border-radius: 50%;
+  position: absolute;
+}
+
+#bubbleContainer{
+  position: relative;
+  width: 90%;
+  height: 600px;
+  margin: auto;
+  margin-top: 5%;
+  border: 1px solid black;
+}
