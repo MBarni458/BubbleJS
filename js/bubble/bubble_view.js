@@ -5,7 +5,6 @@ export default class BubbleView {
     this.htmlElement = document.createElement("div");
     setStyle(this.htmlElement, bubble);
     container.appendChild(this.htmlElement);
-    this.htmlElement.addEventListener("click", clear);
   }
 
   float(position) {
@@ -19,6 +18,14 @@ export default class BubbleView {
 
   remove() {
     this.container.removeChild(this.htmlElement);
+  }
+
+  addClickEvent(clickFunction) {
+    this.htmlElement.addEventListener("click", clickFunction);
+  }
+
+  addMouseoverEvent(hitFunction) {
+    this.htmlElement.addEventListener("mouseover", hitFunction);
   }
 
 }

@@ -1,4 +1,4 @@
-export default class BubbleViewmodel {
+export default class BubbleController {
   constructor(bubble, bubbleView) {
     this.bubble = bubble;
     this.bubbleView = bubbleView;
@@ -21,6 +21,11 @@ export default class BubbleViewmodel {
 
   clear() {
     this.bubbleView.remove();
+  }
+
+  changeDirection(directionAngle = Math.random() * 360, velocity = this.bubble.velocity * 1.3) {
+    this.bubble.setDirectionAngle(directionAngle);
+    this.bubble.setVelocity(velocity);
   }
 
 }
