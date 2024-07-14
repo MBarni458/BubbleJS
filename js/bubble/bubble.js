@@ -69,8 +69,9 @@ export default class Bubble {
     return bubbleSettings.getInstance().destroyable || (this.color.r >= 255 && this.color.g >= 255 && this.color.b >= 255);
   }
 
-  hit(directionAngle, velocity) {
+  hit(event, directionAngle, velocity) {
     if (bubbleSettings.getInstance().hittable) {
+      //From the event (mouse position) it is possible to calculate an accurate angle
       this.setDirectionAngle(directionAngle);
     }
   }

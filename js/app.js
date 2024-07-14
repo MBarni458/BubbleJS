@@ -45,7 +45,7 @@ const newBubble = function (event) {
     let bubbleController;
     let bubbleView = new BubbleView(bubble, container);
     bubbleView.addClickEvent(() => bubbleContainer.removeBubble(bubbleController));
-    bubbleView.addMouseoverEvent(() => bubbleController.hit());
+    bubbleView.addMouseoverEvent((event) => bubbleController.hit(event));
     bubbleController = new BubbleController(bubble, bubbleView);
     bubbleContainer.add(bubbleController);
   }
