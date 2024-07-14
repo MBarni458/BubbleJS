@@ -57,15 +57,16 @@ export default class Bubble {
 
   fade() {
     if (bubbleSettings.getInstance().fade) {
-      this.color.r++;
-      this.color.g++;
-      this.color.b++;
+      this.color.r += this.color.r >= 255 ? 0 : 1;
+      this.color.g += this.color.g >= 255 ? 0 : 1;
+      this.color.b += this.color.b >= 255 ? 0 : 1;
     }
     return this.color;
   }
 
   destroy() {
-    return bubbleSettings.getInstance().destroyable;
+    console.log(this.color);
+    return bubbleSettings.getInstance().destroyable || (this.color.r >= 255 && this.color.g >= 255 && this.color.b >= 255);
   }
 
   hit(directionAngle, velocity) {

@@ -25,7 +25,7 @@ export default class Bubble_container {
   }
 
   clear() {
-    this.bubbleControllers.forEach(bubbleController => bubbleController.clear());
+    this.bubbleControllers.forEach(bubbleController => bubbleController.clear(true));
     this.bubbleControllers = [];
   }
 

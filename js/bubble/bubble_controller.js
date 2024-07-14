@@ -19,8 +19,8 @@ export default class BubbleController {
     return false;
   }
 
-  clear() {
-    if (this.bubble.destroy()) {
+  clear(overrideSettings = false) {
+    if (overrideSettings || this.bubble.destroy()) {
       this.bubbleView.remove();
       return true;
     }
