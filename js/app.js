@@ -2,10 +2,12 @@ import Bubble from "./bubble/bubble.js";
 import BubbleView from "./bubble/bubble_view.js";
 import BubbleController from "./bubble/bubble_controller.js";
 import Bubble_container from "./bubble/bubble_container.js";
-import {initializeStartButton} from "./form/startbutton.js";
+import {initStartButton} from "./form/startbutton.js";
+import {initResetButton} from "./form/resetbutton.js";
 
 const container = document.getElementById("bubbleContainer");
 const startButtonID = "startButton";
+const resetButtonID = "resetButton";
 
 let bubbleContainer;
 
@@ -13,7 +15,8 @@ window.onload = () => init();
 
 function init() {
   bubbleContainer = new Bubble_container();
-  initializeStartButton(startButtonID, bubbleContainer);
+  initStartButton(startButtonID, bubbleContainer);
+  initResetButton(resetButtonID, bubbleContainer);
 }
 
 
@@ -36,4 +39,4 @@ const newBubble = function (event) {
 }
 
 document.getElementById('bubbleContainer').addEventListener('click', newBubble);
-document.getElementById('clearButton').addEventListener('click', bubbleContainer.clear)
+

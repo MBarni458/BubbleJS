@@ -5,7 +5,7 @@ let interval = null;
 let bubbleContainer = null;
 let startButton;
 
-export function initializeStartButton(startButtonID, newBubbleContainer) {
+export function initStartButton(startButtonID, newBubbleContainer) {
   startButton = document.getElementById(startButtonID);
   startButton.addEventListener('click', startOrStop);
   bubbleContainer = newBubbleContainer;
