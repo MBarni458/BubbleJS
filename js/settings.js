@@ -20,6 +20,7 @@ export const bubbleSettings = (function () {
       maxDirectionAngle: 360,
       hittable: false,
       destroyable: false,
+      fade: false,
     }
   }
 

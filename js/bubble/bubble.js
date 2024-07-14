@@ -56,9 +56,11 @@ export default class Bubble {
   }
 
   fade() {
-    this.color.r++;
-    this.color.g++;
-    this.color.b++;
+    if (bubbleSettings.getInstance().fade) {
+      this.color.r++;
+      this.color.g++;
+      this.color.b++;
+    }
     return this.color;
   }
 
