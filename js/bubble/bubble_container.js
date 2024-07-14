@@ -30,9 +30,10 @@ export default class Bubble_container {
   }
 
   removeBubble(bubbleController) {
-    bubbleController.clear();
-    let index = this.bubbleControllers.indexOf(bubbleController)
-    this.bubbleControllers.splice(index, 1);
+    if (bubbleController.clear()) {
+      let index = this.bubbleControllers.indexOf(bubbleController)
+      this.bubbleControllers.splice(index, 1);
+    }
   }
 
 }

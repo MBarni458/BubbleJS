@@ -62,6 +62,10 @@ export default class Bubble {
     return this.color;
   }
 
+  destroy() {
+    return bubbleSettings.getInstance().destroyable;
+  }
+
   hit(directionAngle, velocity) {
     if (bubbleSettings.getInstance().hittable) {
       this.setDirectionAngle(directionAngle);

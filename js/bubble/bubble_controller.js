@@ -20,7 +20,11 @@ export default class BubbleController {
   }
 
   clear() {
-    this.bubbleView.remove();
+    if (this.bubble.destroy()) {
+      this.bubbleView.remove();
+      return true;
+    }
+    return false;
   }
 
   setRadius(diameter) {

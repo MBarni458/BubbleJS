@@ -18,7 +18,8 @@ export const bubbleSettings = (function () {
       maxVelocity: 10,
       minDirectionAngle: 0,
       maxDirectionAngle: 360,
-      hittable: false
+      hittable: false,
+      destroyable: false,
     }
   }
 

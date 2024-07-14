@@ -7,12 +7,14 @@ import {initResetButton} from "./form/resetbutton.js";
 import {initMinBubbleSizeField} from "./form/bubble_size_slide.js";
 import {bubbleSettings} from "./settings.js";
 import {initHittableCheckbox} from "./form/hittable_checkbox.js";
+import {initDestroyableCheckbox} from "./form/destroyable_checkbox.js";
 
 const container = document.getElementById("bubbleContainer");
 const startButtonID = "startButton";
 const resetButtonID = "resetButton";
 const minBubbleSizeFieldID = "BubbleSizeSlide";
 const hitableCheckboxID = "hittableCheckbox";
+const destroyableCheckboxID = "destroyableCheckbox";
 
 let bubbleContainer;
 
@@ -24,6 +26,7 @@ function init() {
   initResetButton(resetButtonID, bubbleContainer);
   initMinBubbleSizeField(minBubbleSizeFieldID, bubbleContainer);
   initHittableCheckbox(hitableCheckboxID);
+  initDestroyableCheckbox(destroyableCheckboxID);
 }
 
 
