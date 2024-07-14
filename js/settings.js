@@ -7,7 +7,7 @@ export const bubbleSettings = (function () {
         x: 1,
         y: 1
       },
-      diameter: 100,
+      diameter: 10,
       diameterVariety: 5,
       color: {
         r: 255,
@@ -18,6 +18,7 @@ export const bubbleSettings = (function () {
       maxVelocity: 10,
       minDirectionAngle: 0,
       maxDirectionAngle: 360,
+      hittable: false
     }
   }
 

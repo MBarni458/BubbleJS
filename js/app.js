@@ -6,11 +6,13 @@ import {initStartButton} from "./form/startbutton.js";
 import {initResetButton} from "./form/resetbutton.js";
 import {initMinBubbleSizeField} from "./form/bubble_size_slide.js";
 import {bubbleSettings} from "./settings.js";
+import {initHittableCheckbox} from "./form/hittable_checkbox.js";
 
 const container = document.getElementById("bubbleContainer");
 const startButtonID = "startButton";
 const resetButtonID = "resetButton";
 const minBubbleSizeFieldID = "BubbleSizeSlide";
+const hitableCheckboxID = "hittableCheckbox";
 
 let bubbleContainer;
 
@@ -21,6 +23,7 @@ function init() {
   initStartButton(startButtonID, bubbleContainer);
   initResetButton(resetButtonID, bubbleContainer);
   initMinBubbleSizeField(minBubbleSizeFieldID, bubbleContainer);
+  initHittableCheckbox(hitableCheckboxID);
 }
 
 
@@ -36,7 +39,7 @@ const newBubble = function (event) {
     let bubbleController;
     let bubbleView = new BubbleView(bubble, container);
     bubbleView.addClickEvent(() => bubbleContainer.removeBubble(bubbleController));
-    bubbleView.addMouseoverEvent(() => bubbleController.changeDirection());
+    bubbleView.addMouseoverEvent(() => bubbleController.hit());
     bubbleController = new BubbleController(bubble, bubbleView);
     bubbleContainer.add(bubbleController);
   }

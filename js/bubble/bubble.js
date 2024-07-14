@@ -62,6 +62,12 @@ export default class Bubble {
     return this.color;
   }
 
+  hit(directionAngle, velocity) {
+    if (bubbleSettings.getInstance().hittable) {
+      this.setDirectionAngle(directionAngle);
+    }
+  }
+
   bounce() {
     if (this.position.x <= this.areaCoordinates.left || this.position.x + this.diameter * 1 >= this.areaCoordinates.right) {
       this.xVelocity = -this.xVelocity;

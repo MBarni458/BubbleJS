@@ -28,6 +28,10 @@ export default class BubbleController {
     this.bubbleView.setRadius(diameter);
   }
 
+  hit(directionAngle = Math.random() * 360, velocity = this.bubble.velocity * 1.3) {
+    this.bubble.hit(directionAngle, velocity);
+  }
+
   changeDirection(directionAngle = Math.random() * 360, velocity = this.bubble.velocity * 1.3) {
     this.bubble.setDirectionAngle(directionAngle);
     this.bubble.setVelocity(velocity);
