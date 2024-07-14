@@ -4,10 +4,13 @@ import BubbleController from "./bubble/bubble_controller.js";
 import Bubble_container from "./bubble/bubble_container.js";
 import {initStartButton} from "./form/startbutton.js";
 import {initResetButton} from "./form/resetbutton.js";
+import {initMinBubbleSizeField} from "./form/bubble_size_slide.js";
+import {bubbleSettings} from "./settings.js";
 
 const container = document.getElementById("bubbleContainer");
 const startButtonID = "startButton";
 const resetButtonID = "resetButton";
+const minBubbleSizeFieldID = "BubbleSizeSlide";
 
 let bubbleContainer;
 
@@ -17,6 +20,7 @@ function init() {
   bubbleContainer = new Bubble_container();
   initStartButton(startButtonID, bubbleContainer);
   initResetButton(resetButtonID, bubbleContainer);
+  initMinBubbleSizeField(minBubbleSizeFieldID, bubbleContainer);
 }
 
 
@@ -26,8 +30,8 @@ const containerHeight = 600;
 const newBubble = function (event) {
   if (container === event.target) {
     let bubble = new Bubble({left: 0, top: 0, right: containerWidth, bottom: containerHeight}, {
-      x: event.offsetX,
-      y: event.offsetY
+      x: event.offsetX - bubbleSettings.getInstance().diameter / 2,
+      y: event.offsetY - bubbleSettings.getInstance().diameter / 2,
     });
     let bubbleController;
     let bubbleView = new BubbleView(bubble, container);

@@ -1,10 +1,10 @@
 export default class Bubble_container {
   constructor() {
-    this.bubbleViewModels = [];
+    this.bubbleControllers = [];
   }
 
   add(bubble) {
-    this.bubbleViewModels.push(bubble);
+    this.bubbleControllers.push(bubble);
   }
 
   action() {
@@ -13,22 +13,26 @@ export default class Bubble_container {
   }
 
   float() {
-    this.bubbleViewModels.forEach(bubbleVM => bubbleVM.float());
+    this.bubbleControllers.forEach(bubbleController => bubbleController.float());
   }
 
   fade() {
-    this.bubbleViewModels = this.bubbleViewModels.filter(bubbleVM => !bubbleVM.fadeAway());
+    this.bubbleControllers = this.bubbleControllers.filter(bubbleController => !bubbleController.fadeAway());
+  }
+
+  setRadius(radius) {
+    this.bubbleControllers.forEach(bubbleController => bubbleController.setRadius(radius));
   }
 
   clear() {
-    this.bubbleViewModels.forEach(bubbleVM => bubbleVM.clear());
-    this.bubbleViewModels = [];
+    this.bubbleControllers.forEach(bubbleController => bubbleController.clear());
+    this.bubbleControllers = [];
   }
 
-  removeBubble(bubbleViewmodel) {
-    bubbleViewmodel.clear();
-    let index = this.bubbleViewModels.indexOf(bubbleViewmodel)
-    this.bubbleViewModels.splice(index, 1);
+  removeBubble(bubbleController) {
+    bubbleController.clear();
+    let index = this.bubbleControllers.indexOf(bubbleController)
+    this.bubbleControllers.splice(index, 1);
   }
 
 }
