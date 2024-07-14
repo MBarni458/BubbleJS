@@ -11,9 +11,40 @@ export default class Bubble {
     this.radius = radius;
     this.color = color;
     this.areaCoordinates = areaCoordinates;
+    this.velocity = velocity;
+    this.directionAngle = directionAngle;
     this.xVelocity = velocity * Math.cos(directionAngle);
     this.yVelocity = velocity * Math.sin(directionAngle);
   }
+
+  setAreaCoordinates(areaCoordinates) {
+    this.areaCoordinates = areaCoordinates;
+  }
+
+  setPosition(position) {
+    this.position = position;
+  }
+
+  setRadius(radius) {
+    this.radius = radius;
+  }
+
+  setColor(color) {
+    this.color = color;
+  }
+
+  setDirectionAngle(directionAngle) {
+    this.directionAngle = directionAngle;
+    this.xVelocity = this.velocity * Math.cos(directionAngle);
+    this.yVelocity = this.velocity * Math.sin(directionAngle);
+  }
+
+  setVelocity(velocity) {
+    this.velocity = velocity;
+    this.xVelocity = velocity * Math.cos(this.directionAngle);
+    this.yVelocity = velocity * Math.sin(this.directionAngle);
+  }
+
 
   float() {
     this.bounce();
