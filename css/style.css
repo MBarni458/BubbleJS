@@ -1,9 +1,10 @@
-.bubble{
+.bubble {
   border-radius: 50%;
   position: absolute;
+  animation-timing-function: linear;
 }
 
-#bubbleContainer{
+#bubbleContainer {
   position: relative;
   width: 90%;
   height: 600px;
