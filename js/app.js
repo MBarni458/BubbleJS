@@ -2,19 +2,23 @@ import Bubble from "./bubble/bubble.js";
 import BubbleView from "./bubble/bubble_view.js";
 import BubbleController from "./bubble/bubble_controller.js";
 import Bubble_container from "./bubble/bubble_container.js";
+import {initializeStartButton} from "./form/startbutton.js";
 
 const container = document.getElementById("bubbleContainer");
-const startButton = document.getElementById("startButton");
+const startButtonID = "startButton";
 
-let bubbleContainer = new Bubble_container();
+let bubbleContainer;
 
-const startText = "Start Animation";
-const stopText = "Stop Animation";
+window.onload = () => init();
+
+function init() {
+  bubbleContainer = new Bubble_container();
+  initializeStartButton(startButtonID, bubbleContainer);
+}
+
 
 const containerWidth = document.body.clientWidth * 0.9;
 const containerHeight = 600;
-
-let interval = null;
 
 const newBubble = function (event) {
   if (container === event.target) {
@@ -31,18 +35,5 @@ const newBubble = function (event) {
   }
 }
 
-const startOrStop = function () {
-  if (startButton.innerHTML === startText) {
-    interval = setInterval(() => {
-      bubbleContainer.action()
-    }, 60);
-    startButton.innerHTML = stopText;
-  } else {
-    clearInterval(interval)
-    startButton.innerHTML = startText;
-  }
-}
-
 document.getElementById('bubbleContainer').addEventListener('click', newBubble);
 document.getElementById('clearButton').addEventListener('click', bubbleContainer.clear)
-startButton.addEventListener('click', startOrStop);

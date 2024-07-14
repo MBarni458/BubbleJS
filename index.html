@@ -3,21 +3,37 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
   <title></title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="css/style.css" rel="stylesheet">
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet">
 </head>
 
 <body>
-  <script type="module" src="js/app.js"></script>
+<script src="js/app.js" type="module"></script>
 
-  </div>
-
+<form onsubmit="event.preventDefault();">
   <button id="startButton">Start Animation</button>
-  <button id="clearButton">Clear</button>
+  <button id="clearButton">Reset</button>
 
-  <div id="bubbleContainer"></div>
+  <label for="minBubbleSizeField">Minimum Bubble Size</label>
+  <input id="minBubbleSizeField" max="20" min="1" type="number" value="1">
+
+  <label for="maxBubbleSizeField">Minimum Bubble Size</label>
+  <input id="maxBubbleSizeField" max="20" min="1" type="number" value="5">
+
+  <label for="hittableCheckbox">Hittable</label>
+  <input id="hittableCheckbox" type="checkbox">
+
+  <label for="destroyableCheckbox">Destroyable</label>
+  <input id="destroyableCheckbox" type="checkbox">
+
+  <label for="fadeCheckbox">Fade Away</label>
+  <input id="fadeCheckbox" type="checkbox">
+</form>
+
+<div id="bubbleContainer"></div>
 
 </body>
 
