@@ -5,7 +5,6 @@ export default class BubbleView {
     this.htmlElement = document.createElement("div");
     setStyle(this.htmlElement, bubble);
     container.appendChild(this.htmlElement);
-    this.htmlElement.addEventListener("click", clear);
   }
 
   float(position) {
@@ -21,13 +20,26 @@ export default class BubbleView {
     this.container.removeChild(this.htmlElement);
   }
 
+  addClickEvent(clickFunction) {
+    this.htmlElement.addEventListener("click", clickFunction);
+  }
+
+  addMouseoverEvent(hitFunction) {
+    this.htmlElement.addEventListener("mouseover", hitFunction);
+  }
+
+  setRadius(diameter) {
+    this.htmlElement.style.width = diameter + "px";
+    this.htmlElement.style.height = diameter + "px";
+  }
+
 }
 
 function setStyle(bubbleView, bubble) {
   bubbleView.className = "bubble";
   bubbleView.style.backgroundColor = "rgb(" + bubble.color.r + ", " + bubble.color.g + ", " + bubble.color.b + ")";
-  bubbleView.style.width = bubble.radius + "px";
-  bubbleView.style.height = bubble.radius + "px";
+  bubbleView.style.width = bubble.diameter + "px";
+  bubbleView.style.height = bubble.diameter + "px";
   bubbleView.style.top = bubble.position.y + "px";
   bubbleView.style.left = bubble.position.x + "px";
 }

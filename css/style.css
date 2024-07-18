@@ -1,13 +1,23 @@
-.bubble{
+.bubble {
   border-radius: 50%;
   position: absolute;
+  animation-timing-function: linear;
 }
 
-#bubbleContainer{
+#bubbleContainer {
   position: relative;
   width: 90%;
   height: 600px;
   margin: auto;
   margin-top: 5%;
   border: 1px solid black;
+}
+
+#infoBox {
+  width: 100%;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
 }
