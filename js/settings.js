@@ -7,12 +7,12 @@ export const bubbleSettings = (function () {
         x: 1,
         y: 1
       },
-      diameter: 10,
-      diameterVariety: 50,
+      diameter: 30,
+      diameterVariety: 0,
       color: {
         r: 255,
-        g: 0,
-        b: 90,
+        g: 255,
+        b: 255,
       },
       minVelocity: 1,
       maxVelocity: 3,

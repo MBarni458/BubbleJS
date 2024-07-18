@@ -13,23 +13,35 @@
 <body>
 <script src="js/app.js" type="module"></script>
 
-<form onsubmit="event.preventDefault();">
-  <button id="startButton">Start Animation</button>
-  <button id="resetButton">Reset</button>
+<div id="infoBox">
 
-  <label for="BubbleSizeSlide">Bubble Size (±10)</label>
-  <input id="BubbleSizeSlide" max="100" min="10" step="1" type="range" value="30">
+  <h1>Click on the box to create a bubble</h1>
+
+  <form onsubmit="event.preventDefault();">
+    <button id="startButton">Start Animation</button>
+    <button id="resetButton">Reset</button>
+
+    <label for="BubbleSizeSlide">Bubble Size</label>
+    <input id="BubbleSizeSlide" max="100" min="10" step="1" type="range" value="30">
 
 
-  <label for="hittableCheckbox">Hittable</label>
-  <input id="hittableCheckbox" type="checkbox">
+    <label for="hittableCheckbox">Hittable</label>
+    <input id="hittableCheckbox" type="checkbox">
 
-  <label for="destroyableCheckbox">Destroyable</label>
-  <input id="destroyableCheckbox" type="checkbox">
+    <label for="destroyableCheckbox">Destroyable</label>
+    <input id="destroyableCheckbox" type="checkbox">
 
-  <label for="fadeCheckbox">Fade Away</label>
-  <input id="fadeCheckbox" type="checkbox">
-</form>
+    <label for="fadeCheckbox">Fade Away</label>
+    <input id="fadeCheckbox" type="checkbox">
+  </form>
+
+  <ul>
+    <li>Hittable: Changes direction when hit the cursor</li>
+    <li>Destroyable: The click destroy it</li>
+    <li>Fade away: It slowly loses its color and then is destroyed</li>
+  </ul>
+
+</div>
 
 <div id="bubbleContainer"></div>
 
